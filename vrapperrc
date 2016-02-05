@@ -1,0 +1,22 @@
+set syntax=on
+set cindent
+set hidden
+set number
+set ignorecase
+set hlsearch
+set tags=./tags;/
+set tabstop=6 shiftwidth=4 softtabstop=4 expandtab
+
+
+nmap <CR> o<Esc>
+
+nnoremap <silent> <Space> :silent noh<Bar>echo<CR>
+" user defined commands
+
+" ELFIN commands
+command ToggleNumber set number !
+command ToggleCIndent set cindent !
+
+set backspace=2
+
+set textwidth=0
