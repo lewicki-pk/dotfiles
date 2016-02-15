@@ -8,20 +8,24 @@ FILES="bash_aliases bashrc screenrc vimrc vrapperrc"
 
 echo "Your home directory is: $HOME"
 for f in $FILES; do
-    exit_status=$?
     diff $f "$HOME/.$f" -q
+    exit_status=$?
     if [ "$exit_status" -eq 1 ]; then
         echo "DBG: Files differ. Name: $f"
+        echo "Created backup in $PWD/backup and original will be overwritten"
         # backup file
-        # create a symlink
+        mkdir backup;
+        cp "$HOME/.$f" ./backup;
     else if [ "$exit_status" -eq 2 ]; then
-        echo "DBG: No such file $HOME/.$f"
-        # output that there is no such file
-        # create a symlink
+        echo "No such file $HOME/.$f About to create a symlink there"
     else if [ "$exit_status" -eq 0 ]; then
         # notify that files are the same
-        # if not symlink -> about to overwrite
+        echo "Files $HOME/.$f and $f are the same. Original will be overwritten."
     fi
     fi
     fi
+
+    # create a symlink
+    ln -fs $PWD/$f "$HOME/.$f"
+    echo ""
 done
