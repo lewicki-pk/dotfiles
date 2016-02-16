@@ -1,5 +1,4 @@
 set syntax=on
-set hidden
 set number
 set ignorecase
 set hlsearch
