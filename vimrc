@@ -1,7 +1,6 @@
 call pathogen#infect()
 
 set syntax=on
-set cindent
 set hidden
 set number
 set ignorecase
@@ -61,5 +60,15 @@ augroup resCur
   autocmd BufWinEnter * call ResCur()
 augroup END
 
-
 let g:tagbar_width = 55
+
+function! LoadCscope()
+    let db = findfile("cscope.out", ".;")
+    if (!empty(db))
+        let path = strpart(db, 0, match(db, "/cscope.out$"))
+        set nocscopeverbose " suppress 'duplicate connection' error
+        exe "cs add " . db . " " . path
+        set cscopeverbose
+    endif
+endfunction
+au BufEnter /* call LoadCscope()

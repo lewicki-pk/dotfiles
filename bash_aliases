@@ -27,3 +27,4 @@ alias list.all.users="cut -d: -f1 /etc/passwd"
 alias log.pi='ssh root@10.0.0.15'
 alias remove.pi.ssh='ssh-keygen -f "/home/piotr/.ssh/known_hosts" -R 10.0.0.15'
 alias screens='screen -S'
+alias ssh.to.toradex='ssh -oCiphers=aes128-ctr'
