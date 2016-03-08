@@ -1,11 +1,12 @@
 set number
 set ignorecase
-set hlsearch
 
 
 nmap <CR> o<Esc>
 
 nnoremap <silent> <Space> :silent noh<Bar>echo<CR>
 " user defined commands
+
+command Hlt set hlsearch !
 
 set textwidth=0

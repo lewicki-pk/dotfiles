@@ -28,3 +28,7 @@ alias log.pi='ssh root@10.0.0.15'
 alias remove.pi.ssh='ssh-keygen -f "/home/piotr/.ssh/known_hosts" -R 10.0.0.15'
 alias screens='screen -S'
 alias ssh.to.toradex='ssh -oCiphers=aes128-ctr'
+alias kill_PDVid="ps aux | grep PDVid | grep -v grep| cut -f 5-7 -d ' ' | xargs kill -9"
+
+alias clear_cache="free -h && sync && echo 3 | sudo tee /proc/sys/vm/drop_caches && free -h"
+alias vim=nvim

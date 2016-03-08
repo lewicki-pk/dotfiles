@@ -1,4 +1,4 @@
-call pathogen#infect()
+"call pathogen#infect()
 
 set syntax=on
 set hidden
