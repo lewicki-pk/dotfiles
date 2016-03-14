@@ -1,5 +1,4 @@
 alias :q=exit
-alias vi=vim
 alias log.build.server="ssh piotr.lewicki@192.168.2.9"
 alias log.lab.stand="ssh root@192.168.2.77"
 
@@ -31,4 +30,6 @@ alias ssh.to.toradex='ssh -oCiphers=aes128-ctr'
 alias kill_PDVid="ps aux | grep PDVid | grep -v grep| cut -f 5-7 -d ' ' | xargs kill -9"
 
 alias clear_cache="free -h && sync && echo 3 | sudo tee /proc/sys/vm/drop_caches && free -h"
+alias vi=vim
 alias vim=nvim
+alias tmux.session="tmux new -s "

@@ -1,3 +1,21 @@
+"" Plugins
+"call plug#begin('~/.nvim/plugged')
+"
+"" On demand loading
+"Plug 'scrooloose/nerdtree' ", { 'on': ['NERDTreeToggle', 'NERDTreeTabsToggle'] }
+"" Plug 'Shougo/deoplete.nvim'
+"" Plug 'zchee/deoplete-clang'
+"" Plug 'Shougo/neoinclude.vim'
+"Plug 'benekastah/neomake'
+"Plug 'bling/vim-airline'
+"Plug 'vim-airline/vim-airline-themes'
+"Plug 'jistr/vim-nerdtree-tabs'
+"Plug 'majutsushi/tagbar'
+"Plug 'dantler/vim-alternate'
+"Plug 'ctrlpvim/ctrlp.vim'
+"Plug 'szw/vim-tags'
+"call plug#end()
+
 "call pathogen#infect()
 
 set syntax=on

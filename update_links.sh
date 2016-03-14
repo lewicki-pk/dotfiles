@@ -4,7 +4,7 @@
 #1. Diff these rc files with those in your $HOME directory and if they differ - create a backup of your files
 #2. Create symbolic links in your $HOME directory pointing to these files
 
-FILES="bash_aliases bashrc screenrc vimrc vrapperrc"
+FILES="bash_aliases bashrc screenrc vimrc vrapperrc tmux.conf nvimrc"
 
 echo "Your home directory is: $HOME"
 for f in $FILES; do
@@ -14,7 +14,7 @@ for f in $FILES; do
         echo "DBG: Files differ. Name: $f"
         echo "Created backup in $PWD/backup and original will be overwritten"
         # backup file
-        mkdir backup;
+        mkdir -p backup;
         cp "$HOME/.$f" ./backup;
     else if [ "$exit_status" -eq 2 ]; then
         echo "No such file $HOME/.$f About to create a symlink there"
