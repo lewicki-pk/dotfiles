@@ -14,7 +14,7 @@ Plug 'majutsushi/tagbar'
 Plug 'dantler/vim-alternate'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'szw/vim-tags'
-Plug "tpope/vim-fugitive"
+Plug 'tpope/vim-fugitive'
 
 " Plug 'Valloric/YouCompleteMe', { 'do': './install.sh' }
 
