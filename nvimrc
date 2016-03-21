@@ -5,7 +5,7 @@ call plug#begin('~/.nvim/plugged')
 Plug 'scrooloose/nerdtree' ", { 'on': ['NERDTreeToggle', 'NERDTreeTabsToggle'] }
 Plug 'Shougo/deoplete.nvim'
 Plug 'zchee/deoplete-clang'
-" Plug 'Shougo/neoinclude.vim'
+Plug 'Shougo/neoinclude.vim'
 Plug 'benekastah/neomake'
 Plug 'bling/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
@@ -184,6 +184,7 @@ let g:ctrlp_map = ''
 map <leader>p :CtrlP<CR>
 
 " Section: Own commands
+set mouse=""
 
 " Section: Own mappings
 "nnoremap ' ' <Nop>
@@ -415,6 +416,18 @@ if has("cscope")
     nmap <C-l>f :vert scs find f <C-R>=expand("<cfile>")<CR><CR>
     nmap <C-l>i :vert scs find i ^<C-R>=expand("<cfile>")<CR>$<CR>
     nmap <C-l>d :vert scs find d <C-R>=expand("<cword>")<CR><CR>
+
+
+    " Opening in new tab with ctrl+h
+
+    nmap <C-h>s :tab cs find s <C-R>=expand("<cword>")<CR><CR>
+    nmap <C-h>g :tab cs find g <C-R>=expand("<cword>")<CR><CR>
+    nmap <C-h>c :tab cs find c <C-R>=expand("<cword>")<CR><CR>
+    nmap <C-h>t :tab cs find t <C-R>=expand("<cword>")<CR><CR>
+    nmap <C-h>e :tab cs find e <C-R>=expand("<cword>")<CR><CR>
+    nmap <C-h>f :tab cs find f <C-R>=expand("<cfile>")<CR><CR>
+    nmap <C-h>i :tab cs find i ^<C-R>=expand("<cfile>")<CR>$<CR>
+    nmap <C-h>d :tab cs find d <C-R>=expand("<cword>")<CR><CR>
 
 
     """"""""""""" key map timeouts
