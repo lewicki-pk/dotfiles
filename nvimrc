@@ -15,6 +15,7 @@ Plug 'dantler/vim-alternate'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'szw/vim-tags'
 Plug 'tpope/vim-fugitive'
+Plug 'tpope/vim-surround'
 
 " Plug 'Valloric/YouCompleteMe', { 'do': './install.sh' }
 
@@ -24,15 +25,12 @@ Plug 'tpope/vim-fugitive'
 " " core plugins
 " Plug "gmarik/vundle"
 " Plug "flazz/vim-colorschemes"
-" Plug "kien/ctrlp.vim"
 "
 " " vim main plugins
 " Plug "sjl/gundo.vim"
-" Plug "bling/vim-airline"
 " Plug "jlanzarotta/bufexplorer"
 " Plug "scrooloose/syntastic.git"
 " Plug "vim-scripts/tComment"
-" Plug "tpope/vim-surround"
 " Plug "mileszs/ack.vim"
 " Plug "rking/ag.vim"
 " Plug "edsono/vim-matchit"
@@ -49,10 +47,8 @@ Plug 'tpope/vim-fugitive'
 " Plug "rhysd/clever-f.vim"
 "
 " " togglable panels
-" Plug "scrooloose/nerdtree"
 " Plug "tpope/vim-vinegar"
 " Plug "vim-scripts/taglist.vim"
-" Plug "majutsushi/tagbar"
 "
 " " language vundles
 " Plug "pangloss/vim-javascript"
