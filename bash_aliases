@@ -38,3 +38,5 @@ alias unmount.raspberrypi="fusermount -u /home/lewiatan/raspberryFS"
 alias mount.build.server="sshfs piotr.lewicki@192.168.2.9:/home/piotr.lewicki/ /home/piotr.lewicki/"
 alias unmount.build.serwer="sudo fusermount -u /home/piotr.lewicki"
 alias remove.pi.ssh='ssh-keygen -f "/home/lewiatan/.ssh/known_hosts" -R raspberrypi'
+
+alias list.apt.packages="dpkg --get-selections | grep -v deinstall"
