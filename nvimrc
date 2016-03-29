@@ -17,17 +17,19 @@ Plug 'szw/vim-tags'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-surround'
 
+" Tested but somehow not working
+" Plug 'sjl/gundo.vim' " not working
+
 " Plug 'Valloric/YouCompleteMe', { 'do': './install.sh' }
 
 " Plug 'Shougo/neosnippet.vim'
+"
 " Check some other guy Plugins
 "Plug 'easymotion/vim-easymotion'
 " " core plugins
-" Plug "gmarik/vundle"
 " Plug "flazz/vim-colorschemes"
 "
 " " vim main plugins
-" Plug "sjl/gundo.vim"
 " Plug "jlanzarotta/bufexplorer"
 " Plug "scrooloose/syntastic.git"
 " Plug "vim-scripts/tComment"
