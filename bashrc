@@ -115,7 +115,7 @@ fi
 
 # private section of .bashrc
 set -o vi
-export PS1='\[\e[0;32m\]\u\[\e[m\]@\[\e[0;34m\]\w\[\e[m\] \\$ '
+export PS1='[\[\e[0;32m\]\u\[\e[m\]@\[\e[0;34m\]\w\[\e[m\]] \\$ '
 #export PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ '
 export VISUAL=vim
 export EDITOR="$VISUAL"
