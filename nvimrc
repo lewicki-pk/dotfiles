@@ -16,6 +16,11 @@ Plug 'ctrlpvim/ctrlp.vim'
 Plug 'szw/vim-tags'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-surround'
+Plug 'edsono/vim-matchit'
+Plug 'tpope/vim-repeat'
+Plug 'tpope/vim-speeddating'
+
+" Easy but I'm not sure if I'll ever use that
 
 " Tested but somehow not working
 " Plug 'sjl/gundo.vim' " not working
@@ -35,10 +40,8 @@ Plug 'tpope/vim-surround'
 " Plug "vim-scripts/tComment"
 " Plug "mileszs/ack.vim"
 " Plug "rking/ag.vim"
-" Plug "edsono/vim-matchit"
 " Plug "henrik/vim-indexed-search"
 " Plug "tpope/vim-abolish"
-" Plug "tpope/vim-repeat"
 " Plug "jiangmiao/auto-pairs"
 " Plug "xolox/vim-session"
 " Plug "xolox/vim-misc"
