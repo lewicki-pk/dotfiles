@@ -279,7 +279,7 @@ endfunc
 nnoremap <leader>r :call NumberToggle()<cr>
 
 " Toggle at startup
-set rnu
+" set rnu
 
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
