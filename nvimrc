@@ -197,6 +197,9 @@ nmap <leader>t :TagbarToggle<CR>
 nnoremap <silent> <Space> :silent noh<CR>
 nmap <CR> o<Esc>
 
+command! BuffersToTabs tab sball
+nnoremap <script> <silent> <unique> <Leader>tt :BuffersToTabs<CR>
+
 " Tell vim to remember certain things when we exit
 "  '10  :  marks will be remembered for up to 10 previously edited files
 "  "100 :  will save up to 100 lines for each register
@@ -281,7 +284,7 @@ endfunc
 " Toggle between normal and relative numbering.
 nnoremap <leader>r :call NumberToggle()<cr>
 
-" Toggle at startup
+" Toggle relative numbering at startup
 " set rnu
 
 
