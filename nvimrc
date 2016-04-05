@@ -181,8 +181,8 @@ let g:airline_symbols.linenr = ''
 
 " Section: Ctrl-P plugin
 set wildignore+=*.a,*.o
-let g:ctrlp_map = ''
-map <leader>p :CtrlP<CR>
+let g:ctrlp_map = '<C-p>'
+let g:ctrlp_show_hidden = 1
 
 " Section: Own commands
 set mouse=""
