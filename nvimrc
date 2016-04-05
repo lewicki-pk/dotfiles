@@ -19,6 +19,7 @@ Plug 'tpope/vim-surround'
 Plug 'edsono/vim-matchit'
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-speeddating'
+Plug 'jlanzarotta/bufexplorer'
 
 " Easy but I'm not sure if I'll ever use that
 
@@ -35,10 +36,9 @@ Plug 'tpope/vim-speeddating'
 " Plug "flazz/vim-colorschemes"
 "
 " " vim main plugins
-" Plug "jlanzarotta/bufexplorer"
+" Plug 'alepez/vim-gtest'
 " Plug "scrooloose/syntastic.git"
 " Plug "vim-scripts/tComment"
-" Plug "mileszs/ack.vim"
 " Plug "rking/ag.vim"
 " Plug "henrik/vim-indexed-search"
 " Plug "tpope/vim-abolish"
