@@ -196,6 +196,7 @@ map <leader>a :A<CR>
 nmap <leader>t :TagbarToggle<CR>
 nnoremap <silent> <Space> :silent noh<CR>
 nmap <CR> o<Esc>
+map <leader>ll :set list! <CR>
 
 command! BuffersToTabs tab sball
 nnoremap <script> <silent> <unique> <Leader>tt :BuffersToTabs<CR>
