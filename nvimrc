@@ -20,6 +20,7 @@ Plug 'edsono/vim-matchit'
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-speeddating'
 Plug 'jlanzarotta/bufexplorer'
+Plug 'airblade/vim-gitgutter'
 
 " Easy but I'm not sure if I'll ever use that
 
@@ -47,7 +48,6 @@ Plug 'jlanzarotta/bufexplorer'
 " Plug "xolox/vim-misc"
 " Plug "editorconfig/editorconfig-vim"
 " Plug "godlygeek/tabular"
-" Plug "airblade/vim-gitgutter"
 " Plug "Lokaltog/vim-easymotion"
 " Plug "rhysd/clever-f.vim"
 "
