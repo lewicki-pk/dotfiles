@@ -201,6 +201,9 @@ map <leader>ll :set list! <CR>
 command! BuffersToTabs tab sball
 nnoremap <script> <silent> <unique> <Leader>tt :BuffersToTabs<CR>
 
+command! RunMe terminal ./%:t:r
+command! MakeAll !make
+
 " Tell vim to remember certain things when we exit
 "  '10  :  marks will be remembered for up to 10 previously edited files
 "  "100 :  will save up to 100 lines for each register
