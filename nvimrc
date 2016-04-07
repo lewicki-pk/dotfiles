@@ -22,6 +22,10 @@ Plug 'tpope/vim-speeddating'
 Plug 'jlanzarotta/bufexplorer'
 Plug 'airblade/vim-gitgutter'
 
+" Syntax plugins
+Plug 'kergoth/vim-bitbake'
+Plug 'aklt/plantuml-syntax'
+
 " Easy but I'm not sure if I'll ever use that
 
 " Tested but somehow not working
