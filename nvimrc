@@ -21,6 +21,9 @@ Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-speeddating'
 Plug 'jlanzarotta/bufexplorer'
 Plug 'airblade/vim-gitgutter'
+Plug 'henrik/vim-indexed-search'
+Plug 'godlygeek/tabular'
+Plug 'jiangmiao/auto-pairs'
 
 " Syntax plugins
 Plug 'kergoth/vim-bitbake'
@@ -45,13 +48,10 @@ Plug 'aklt/plantuml-syntax'
 " Plug "scrooloose/syntastic.git"
 " Plug "vim-scripts/tComment"
 " Plug "rking/ag.vim"
-" Plug "henrik/vim-indexed-search"
 " Plug "tpope/vim-abolish"
-" Plug "jiangmiao/auto-pairs"
 " Plug "xolox/vim-session"
 " Plug "xolox/vim-misc"
 " Plug "editorconfig/editorconfig-vim"
-" Plug "godlygeek/tabular"
 " Plug "Lokaltog/vim-easymotion"
 " Plug "rhysd/clever-f.vim"
 "
