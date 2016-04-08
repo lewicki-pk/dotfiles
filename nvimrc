@@ -271,7 +271,7 @@ set splitbelow          " Horizontal split below current.
 set splitright          " Vertical split to right of current.
 "
 if !&scrolloff
-  set scrolloff=3       " Show next 3 lines while scrolling.
+  set scrolloff=2       " Show next 2 lines while scrolling.
 endif
 if !&sidescrolloff
   set sidescrolloff=5   " Show next 5 columns while side-scrolling.

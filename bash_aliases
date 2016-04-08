@@ -31,6 +31,7 @@ alias clear_cache="free -h && sync && echo 3 | sudo tee /proc/sys/vm/drop_caches
 alias vi=vim
 alias vim=nvim
 alias tmux.session="tmux new -s "
+alias tmux.attach="tmux attach -t "
 
 # sshfs
 alias mount.raspberrypi="sshfs -o idmap=user pi@raspberryPi:/home/pi /home/lewiatan/raspberryFS/"
