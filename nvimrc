@@ -182,7 +182,7 @@ let g:airline_symbols.linenr = ''
 " Section: Neomake
 " set makeprg=make
 " set errorformat=%f:%l:%m
-let g:neomake_cpp_clang_args = ["-std=c++14", "-Wextra", "-Wall", "-g"]
+let g:neomake_cpp_clang_args = ["-std=c++14", "-Wall"]
 
 " Section: Ctrl-P plugin
 set wildignore+=*.a,*.o
