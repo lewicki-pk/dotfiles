@@ -286,6 +286,11 @@ endif
 set display+=lastline
 set nostartofline       " Do not jump to first character with page commands.
 
+
+"====[ Make the 81st column stand out ]====================
+highlight ColorColumn ctermbg=magenta
+call matchadd('ColorColumn', '\%121v', 140)
+
 " Relative numbering
 function! NumberToggle()
 if(&relativenumber == 1)
