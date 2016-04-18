@@ -20,6 +20,14 @@ function parse_image_packages() {
     bitbake -g $1 && cat pn-depends.dot | grep -v -e '-native' | grep -v digraph | grep -v -e '-image' | awk '{print $1}' | sort | uniq
 }
 
+# git aliases
+alias gcommit="git commit "
+alias gstatus="git status "
+alias gadd="git add "
+alias gpull="git pull "
+alias gpush="git push "
+alias gdiff="git diff "
+
 alias list.all.users="cut -d: -f1 /etc/passwd"
 alias log.pi='ssh root@10.0.0.15'
 alias screens='screen -S'
@@ -32,6 +40,8 @@ alias vi=vim
 alias vim=nvim
 alias tmux.session="tmux new -s "
 alias tmux.attach="tmux attach -t "
+
+alias gmock_gen="~/repositories/googletest/googlemock/scripts/generator/gmock_gen.py "
 
 # sshfs
 alias mount.raspberrypi="sshfs -o idmap=user pi@raspberryPi:/home/pi /home/lewiatan/raspberryFS/"
