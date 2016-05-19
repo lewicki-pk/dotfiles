@@ -10,7 +10,7 @@ call plug#begin('~/.nvim/plugged')
 " On demand loading
 Plug 'scrooloose/nerdtree' ", { 'on': ['NERDTreeToggle', 'NERDTreeTabsToggle'] }
 Plug 'Shougo/deoplete.nvim'
-Plug 'zchee/deoplete-clang'
+Plug 'zchee/deoplete-clang' ", '3fae53f009e5b7b1ae0b21a80c81028b2925640c'
 Plug 'Shougo/neoinclude.vim'
 Plug 'benekastah/neomake'
 Plug 'bling/vim-airline'
@@ -30,6 +30,7 @@ Plug 'airblade/vim-gitgutter'
 Plug 'henrik/vim-indexed-search'
 Plug 'godlygeek/tabular'
 Plug 'jiangmiao/auto-pairs'
+Plug 'tpope/vim-eunuch'
 
 " Syntax plugins
 Plug 'kergoth/vim-bitbake'
