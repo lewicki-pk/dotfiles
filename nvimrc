@@ -205,10 +205,14 @@ let mapleader=","
 map <leader>n <plug>NERDTreeTabsToggle<CR>
 map <leader>m :NERDTree %:p:h<CR>
 map <leader>a :A<CR>
-nmap <leader>t :TagbarToggle<CR>
+nmap <leader>bb :TagbarToggle<CR>
 nnoremap <silent> <Space> :silent noh<CR>
 nmap <CR> o<Esc>
 map <leader>ll :set list! <CR>
+" move to previously used tab
+let g:lasttab = 1
+nmap <Leader>tl :exe "tabn ".g:lasttab<CR>
+au TabLeave * let g:lasttab = tabpagenr()
 
 command! BuffersToTabs tab sball
 nnoremap <script> <silent> <unique> <Leader>tt :BuffersToTabs<CR>
