@@ -293,8 +293,16 @@ set nostartofline       " Do not jump to first character with page commands.
 
 
 "====[ Make the 81st column stand out ]====================
-highlight ColorColumn ctermbg=magenta
-call matchadd('ColorColumn', '\%121v', 140)
+"highlight ColorColumn ctermbg=magenta
+"call matchadd('ColorColumn', '\%121v', 120)
+"
+"highlight OverLength ctermbg=red ctermfg=white guibg=#592929
+"match OverLength /\%81v.\+/
+"
+augroup vimrc_autocmds
+  autocmd BufEnter * highlight OverLength ctermbg=darkgrey guibg=#111111
+  autocmd BufEnter * match OverLength /\%120v.*/
+augroup END
 
 " Relative numbering
 function! NumberToggle()
@@ -312,6 +320,12 @@ nnoremap <leader>r :call NumberToggle()<cr>
 " Toggle relative numbering at startup
 " set rnu
 
+" disable vim-gutter in vim-diff
+augroup diff
+   autocmd!
+   autocmd FilterWritePre * if &diff | GitGutterDisable | endif
+   autocmd BufWinLeave fugitive://* if &diff | GitGutterEnable | endif
+augroup END
 
 if has("cscope")
 
