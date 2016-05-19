@@ -1,14 +1,14 @@
 # Monitor eth0 bandwidth and update every 5 s
 # Assign the output of this cmd to '%1`' and use it in the below hardstatus line:
 # backtick 1 0 0 /usr/local/bin/wormulon -d 5 -i eth0
- 
+
 hardstatus alwayslastline "%{bw}[$STY][%H] [%?%-Lw%?%{wb}%n*%f %t%{bw}%?%+Lw%?]%=%{bw} [%1`] [%c:%s] [%l]" # modified from http://lists.gnu.org/archive/html/screen-users/2007-08/msg00008.html
- 
+
 # Set the scrollback length:
 defscrollback 10000
 
 autodetach on
- 
+
 # Select whether you want to see the copyright notice during startup:
 startup_message off
 
@@ -18,3 +18,6 @@ altscreen on
 # disable lock screen
 bind ^x
 bind x
+
+# for arduino-mk serial monitor (enable closing when inside tmux)
+bindkey ^C kill

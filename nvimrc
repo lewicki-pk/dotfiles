@@ -31,6 +31,7 @@ Plug 'henrik/vim-indexed-search'
 Plug 'godlygeek/tabular'
 Plug 'jiangmiao/auto-pairs'
 Plug 'tpope/vim-eunuch'
+Plug 'vim-ruby/vim-ruby'
 
 " Syntax plugins
 Plug 'kergoth/vim-bitbake'
@@ -107,7 +108,7 @@ set completeopt-=preview
 " " libclang shared library path
 " let g:deoplete#sources#clang#libclang_path = '/opt/llvm/lib/libclang.dylib'
 " " or
-let g:deoplete#sources#clang#libclang_path = '/usr/lib/llvm-3.6/lib/libclang.so.1'
+let g:deoplete#sources#clang#libclang_path = '/usr/lib/llvm-3.8/lib/libclang.so'
 "
 " " clang builtin header path
 let g:deoplete#sources#clang#clang_header = '/usr/lib/clang'
@@ -218,6 +219,7 @@ command! BuffersToTabs tab sball
 nnoremap <script> <silent> <unique> <Leader>tt :BuffersToTabs<CR>
 
 command! RunMe terminal ./%:t:r
+command! RubyRun terminal ruby %
 command! MakeAll !make
 
 " Tell vim to remember certain things when we exit
