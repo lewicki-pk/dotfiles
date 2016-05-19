@@ -1,5 +1,5 @@
 alias :q=exit
-alias log.build.server="ssh piotr.lewicki@192.168.2.9"
+alias log.build.server="ssh piotr.lewicki@buildServer"
 alias log.lab.stand="ssh root@192.168.2.77"
 
 
@@ -22,11 +22,12 @@ function parse_image_packages() {
 
 # git aliases
 alias gcommit="git commit "
-alias gstatus="git status "
+alias gst="git status "
 alias gadd="git add "
 alias gpull="git pull "
 alias gpush="git push "
-alias gdiff="git diff "
+alias gd="git diff "
+alias gd.c="git diff --cached "
 
 alias list.all.users="cut -d: -f1 /etc/passwd"
 alias log.pi='ssh root@10.0.0.15'
@@ -47,8 +48,20 @@ alias gmock_gen="~/repositories/googletest/googlemock/scripts/generator/gmock_ge
 alias mount.raspberrypi="sshfs -o idmap=user pi@raspberryPi:/home/pi /home/lewiatan/raspberryFS/"
 alias unmount.raspberrypi="fusermount -u /home/lewiatan/raspberryFS"
 
-alias mount.build.server="sshfs piotr.lewicki@192.168.2.9:/home/piotr.lewicki/ /home/piotr.lewicki/"
+alias mount.build.server="sshfs piotr.lewicki@buildServer:/home/piotr.lewicki/ /home/piotr.lewicki/"
 alias unmount.build.serwer="sudo fusermount -u /home/piotr.lewicki"
 alias remove.pi.ssh='ssh-keygen -f "/home/lewiatan/.ssh/known_hosts" -R raspberrypi'
 
 alias list.apt.packages="dpkg --get-selections | grep -v deinstall"
+
+alias elvim="vim -u ~/elfinrc"
+
+function cd.up() {
+    if [[ "$@" == "" ]] ; then
+        cd ..
+    else
+        for i in $(seq 1 $@) ; do
+            cd ..
+        done
+    fi
+}
