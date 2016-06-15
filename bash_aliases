@@ -45,8 +45,9 @@ alias tmux.attach="tmux attach -t "
 alias gmock_gen="~/repositories/googletest/googlemock/scripts/generator/gmock_gen.py "
 
 # sshfs
-alias mount.raspberrypi="sshfs -o idmap=user pi@raspberryPi:/home/pi /home/lewiatan/raspberryFS/"
-alias unmount.raspberrypi="fusermount -u /home/lewiatan/raspberryFS"
+alias mount.pi.home="sshfs -o idmap=user pi@raspberryPi:/home/pi /home/lewiatan/pi/home/"
+alias mount.pi.openhab="sshfs -o idmap=user pi@raspberryPi:/opt/openhab /home/lewiatan/pi/openhab/"
+alias unmount.raspberrypi="fusermount -u /home/lewiatan/pi/home/ ; fusermount -u /home/lewiatan/pi/openhab/"
 
 alias mount.build.server="sshfs piotr.lewicki@buildServer:/home/piotr.lewicki/ /home/piotr.lewicki/"
 alias unmount.build.serwer="sudo fusermount -u /home/piotr.lewicki"
