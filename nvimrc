@@ -302,7 +302,7 @@ set nostartofline       " Do not jump to first character with page commands.
 "match OverLength /\%81v.\+/
 "
 augroup vimrc_autocmds
-  autocmd BufEnter * highlight OverLength ctermbg=darkgrey guibg=#111111
+  autocmd BufEnter * highlight OverLength ctermbg=white
   autocmd BufEnter * match OverLength /\%120v.*/
 augroup END
 
