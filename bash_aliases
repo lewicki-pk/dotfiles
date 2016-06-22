@@ -44,6 +44,11 @@ alias tmux.attach="tmux attach -t "
 
 alias gmock_gen="~/repositories/googletest/googlemock/scripts/generator/gmock_gen.py "
 
+function stopwatch() {
+    date +%H:%M:%S:%N
+    while true; do echo -ne "`date +%H:%M:%S:%N`\r"; done;
+}
+
 # sshfs
 alias mount.pi.home="sshfs -o idmap=user pi@raspberryPi:/home/pi /home/lewiatan/pi/home/"
 alias mount.pi.openhab="sshfs -o idmap=user pi@raspberryPi:/opt/openhab /home/lewiatan/pi/openhab/"
