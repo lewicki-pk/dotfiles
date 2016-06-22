@@ -268,6 +268,7 @@ set backspace=2
 
 set textwidth=0
 set wrapmargin=0
+set nowrap
 "==================================================
 set showcmd             " Show (partial) command in status line.
 set showmatch           " Show matching brackets.
