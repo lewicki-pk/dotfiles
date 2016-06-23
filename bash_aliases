@@ -47,13 +47,18 @@ alias gmock_gen="~/repositories/googletest/googlemock/scripts/generator/gmock_ge
 function stopwatch() {
     #date +%H:%M:%S:%N
     #while true; do echo -ne "`date +%H:%M:%S:%N`\r"; done;
-    date1=`date +%s.%N`
+    #date1=`date +%s.%N`
+    #while true; do
+    #    curr_date=`date +%s.%N`
+    #    subtr=`echo "$curr_date - $date1" | bc`
+    #    echo -ne "$subtr\r";
+    #    sleep 0.03
+    #done;
+    now=$(date +%s)sec
     while true; do
-        curr_date=`date +%s.%N`
-        subtr=`echo "$curr_date - $date1" | bc`
-        echo -ne "$subtr\r";
+        printf "%s\r" $(TZ=UTC date --date now-$now +%H:%M:%S.%N)
         sleep 0.03
-    done;
+    done
 }
 
 # sshfs
