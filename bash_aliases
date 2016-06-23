@@ -45,8 +45,15 @@ alias tmux.attach="tmux attach -t "
 alias gmock_gen="~/repositories/googletest/googlemock/scripts/generator/gmock_gen.py "
 
 function stopwatch() {
-    date +%H:%M:%S:%N
-    while true; do echo -ne "`date +%H:%M:%S:%N`\r"; done;
+    #date +%H:%M:%S:%N
+    #while true; do echo -ne "`date +%H:%M:%S:%N`\r"; done;
+    date1=`date +%s.%N`
+    while true; do
+        curr_date=`date +%s.%N`
+        subtr=`echo "$curr_date - $date1" | bc`
+        echo -ne "$subtr\r";
+        sleep 0.03
+    done;
 }
 
 # sshfs
