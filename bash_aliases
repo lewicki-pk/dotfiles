@@ -51,7 +51,7 @@ function stopwatch() {
     now=$(date +%s)sec
     while true; do
         printf "%s\r" $(TZ=UTC date --date now-$now +%H:%M:%S.%N)
-        sleep 0.03
+        sleep 0.05
     done
 }
 
