@@ -220,6 +220,7 @@ nnoremap <script> <silent> <unique> <Leader>tt :BuffersToTabs<CR>
 
 command! RunMe terminal ./%:t:r
 command! RubyRun terminal ruby %
+command! PythonRun terminal python3 %
 command! MakeAll !make
 
 " Tell vim to remember certain things when we exit
