@@ -302,10 +302,15 @@ set nostartofline       " Do not jump to first character with page commands.
 "highlight OverLength ctermbg=red ctermfg=white guibg=#592929
 "match OverLength /\%81v.\+/
 "
-augroup vimrc_autocmds
-  autocmd BufEnter * highlight OverLength ctermbg=white
-  autocmd BufEnter * match OverLength /\%120v.*/
-augroup END
+highlight OverLength ctermbg=white
+match OverLength /\%120v.*/
+" Enable / Disable the highlighting with ,he / ,hd
+map <leader>hd :highlight clear OverLength <CR>
+map <leader>he :highlight OverLength ctermbg=white <CR>
+"augroup vimrc_autocmds
+"  autocmd BufEnter * highlight OverLength ctermbg=white
+"  autocmd BufEnter * match OverLength /\%120v.*/
+"augroup END
 
 " Relative numbering
 function! NumberToggle()
