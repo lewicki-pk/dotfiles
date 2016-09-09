@@ -135,6 +135,8 @@ let g:deoplete#sources#clang#sort_algo = 'priority'
 " let g:deoplete#sources#clang#debug#log_file =
 " '~/.log/nvim/python/deoplete-clang.log'
 
+let g:python_host_prog = '/usr/bin/python3'
+
 " Section: vim-airline
 
 " air-line
@@ -203,6 +205,7 @@ set mouse=""
 " Section: Own mappings
 "nnoremap ' ' <Nop>
 let mapleader=","
+nnoremap <Leader>p :CtrlP ~/repositories/<CR>
 map <leader>n <plug>NERDTreeTabsToggle<CR>
 map <leader>m :NERDTree %:p:h<CR>
 map <leader>a :A<CR>
@@ -335,6 +338,18 @@ augroup diff
    autocmd FilterWritePre * if &diff | GitGutterDisable | endif
    autocmd BufWinLeave fugitive://* if &diff | GitGutterEnable | endif
 augroup END
+
+" saving folds for my work-log file
+augroup QuickNotes
+    au BufWinLeave *.md mkview
+    au BufWinEnter *.md silent loadview
+augroup END
+"au BufWinLeave *.md mkview
+"au BufWinEnter *.md silent loadview
+" This one works
+"autocmd BufWinLeave *.md execute "mkview! " . expand('<afile>:p:h') . "/." . expand('<afile>:t') . ".view"
+" And this one not
+"autocmd BufWinEnter *.md execute "loadview! " . expand('<afile>:p:h') . "/." . expand('<afile>:t') . ".view"
 
 if has("cscope")
 
