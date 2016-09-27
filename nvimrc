@@ -32,6 +32,7 @@ Plug 'godlygeek/tabular'
 Plug 'jiangmiao/auto-pairs'
 Plug 'tpope/vim-eunuch'
 Plug 'vim-ruby/vim-ruby'
+Plug 'davidhalter/jedi-vim' "requires 'pip install jedi'
 
 " Syntax plugins
 Plug 'kergoth/vim-bitbake'
