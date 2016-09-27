@@ -13,6 +13,12 @@ function touch-timestamped() {
     touch $NAME
 }
 
+function mkdir-timestamped() {
+    NAME='date +%Y-%m-%d_%H-%M_'
+    NAME=`$NAME$@`
+    mkdir $NAME
+}
+
 function parse_image_packages() {
     bitbake -g $1 && cat pn-depends.dot | grep -v -e '-native' | grep -v digraph | grep -v -e '-image' | awk '{print $1}' | sort | uniq
 }
@@ -25,6 +31,22 @@ alias gpull="git pull "
 alias gpush="git push "
 alias gd="git diff "
 alias gd.c="git diff --cached "
+function g.vim.diff () {
+    local VARIABLE="$(git diff --name-only)"
+    if [ -n "$VARIABLE" ] ; then
+        git diff --name-only | xargs nvim -p
+    else
+        echo "Nothing to open"
+    fi
+}
+function g.vim.diff.cached () {
+    local VARIABLE="$(git diff --cached --name-only)"
+    if [ -n "$VARIABLE" ] ; then
+        git diff --cached --name-only | xargs nvim -p
+    else
+        echo "Nothing to open"
+    fi
+}
 
 alias list.all.users="cut -d: -f1 /etc/passwd"
 alias log.pi='ssh root@10.0.0.15'
@@ -33,8 +55,7 @@ alias screens='screen -S'
 alias clear_cache="free -h && sync && echo 3 | sudo tee /proc/sys/vm/drop_caches && free -h"
 alias vi=vim
 alias vim=nvim
-alias tmux.session="tmux new -s "
-alias tmux.attach="tmux attach -t "
+alias tmux.session='tmux new-session -d -s '
 
 alias gmock_gen="~/repositories/googletest/googlemock/scripts/generator/gmock_gen.py "
 

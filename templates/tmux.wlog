@@ -1,0 +1,17 @@
+#!/bin/bash
+
+SESSION_NAME="some session"
+# FIXME/TODO use a variable for all needed commands
+
+if [ -n "$TMUX" ] ; then
+    echo "First leave tmux and then call this script.."
+    exit 1
+elif ( tmux has-session -t "$SESSION_NAME" 2> /dev/null ) ; then
+    echo "Session named \"$SESSION_NAME\" already exists- it will be opened.."
+    sleep 1
+else
+    tmux new-session -d -s "$SESSION_NAME" 'bash --rcfile <(printf ". ~/.bashrc \n vim")'
+    echo "Creating new session named: \"$SESSION_NAME\".."
+    sleep 1
+fi
+tmux attach-session -d -t "$SESSION_NAME"

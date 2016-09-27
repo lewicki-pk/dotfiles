@@ -33,6 +33,12 @@ Plug 'jiangmiao/auto-pairs'
 Plug 'tpope/vim-eunuch'
 Plug 'vim-ruby/vim-ruby'
 Plug 'davidhalter/jedi-vim' "requires 'pip install jedi'
+" snippets plugin
+Plug 'tomtom/tlib_vim'
+Plug 'MarcWeber/vim-addon-mw-utils'
+Plug 'garbas/vim-snipmate'
+" snippets templates
+Plug 'honza/vim-snippets'
 
 " Syntax plugins
 Plug 'kergoth/vim-bitbake'
@@ -87,10 +93,6 @@ Plug 'aklt/plantuml-syntax'
 " Plug "Valloric/YouCompleteMe"
 " Plug "MarcWeber/vim-addon-mw-utils"
 " Plug "tomtom/tlib_vim"
-"
-" " snippets
-" Plug "SirVer/ultisnips"
-" Plug "honza/vim-snippets"
 
 call plug#end()
 
@@ -135,6 +137,8 @@ let g:deoplete#sources#clang#sort_algo = 'priority'
 " let g:deoplete#enable_debug = 1
 " let g:deoplete#sources#clang#debug#log_file =
 " '~/.log/nvim/python/deoplete-clang.log'
+
+let g:python_host_prog = '/usr/bin/python3'
 
 " Section: vim-airline
 
@@ -204,6 +208,7 @@ set mouse=""
 " Section: Own mappings
 "nnoremap ' ' <Nop>
 let mapleader=","
+nnoremap <Leader>p :CtrlP ~/repositories/<CR>
 map <leader>n <plug>NERDTreeTabsToggle<CR>
 map <leader>m :NERDTree %:p:h<CR>
 map <leader>a :A<CR>
@@ -251,6 +256,9 @@ set wildignorecase
 "==================================================
 " Section: Old
 " set syntax enable
+syntax enable
+set viewoptions=folds
+set foldmethod=manual
 set hidden
 set number
 set ignorecase
@@ -335,6 +343,17 @@ augroup diff
    autocmd!
    autocmd FilterWritePre * if &diff | GitGutterDisable | endif
    autocmd BufWinLeave fugitive://* if &diff | GitGutterEnable | endif
+augroup END
+
+" saving folds for my work-log file
+"augroup QuickNotes
+"    au BufWinLeave *.md mkview
+"    au BufWinEnter *.md silent loadview
+"augroup END
+augroup QuickNotes
+    autocmd!
+    autocmd BufWinLeave *.md execute "mkview! " . expand('<afile>:p:h') . "/." . expand('<afile>:t') . ".view"
+    autocmd BufWinEnter *.md execute "silent! source " . expand('%:p:h') . "/." . expand('%:t') . ".view"
 augroup END
 
 if has("cscope")
