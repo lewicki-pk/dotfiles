@@ -100,6 +100,10 @@ call plug#end()
 "set t_Co=256
 
 
+" Section: jedi-vim
+
+let g:jedi#force_py_version=3
+
 " Section: deoplete
 "Use deoplete for completion
 let g:deoplete#enable_at_startup = 1
