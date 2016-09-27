@@ -55,9 +55,7 @@ alias screens='screen -S'
 alias clear_cache="free -h && sync && echo 3 | sudo tee /proc/sys/vm/drop_caches && free -h"
 alias vi=vim
 alias vim=nvim
-alias tmux.session='tmux new-session "tmux source-file ~/.tmux.sessions/$1"' # not working
-alias tmux.named.session="tmux new -s "
-alias tmux.attach="tmux attach -t "
+alias tmux.session='tmux new-session -d -s '
 
 alias gmock_gen="~/repositories/googletest/googlemock/scripts/generator/gmock_gen.py "
 
