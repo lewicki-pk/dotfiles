@@ -255,6 +255,9 @@ set wildignorecase
 "==================================================
 " Section: Old
 " set syntax enable
+syntax enable
+set viewoptions=folds
+set foldmethod=manual
 set hidden
 set number
 set ignorecase
@@ -342,16 +345,15 @@ augroup diff
 augroup END
 
 " saving folds for my work-log file
+"augroup QuickNotes
+"    au BufWinLeave *.md mkview
+"    au BufWinEnter *.md silent loadview
+"augroup END
 augroup QuickNotes
-    au BufWinLeave *.md mkview
-    au BufWinEnter *.md silent loadview
+    autocmd!
+    autocmd BufWinLeave *.md execute "mkview! " . expand('<afile>:p:h') . "/." . expand('<afile>:t') . ".view"
+    autocmd BufWinEnter *.md execute "silent! source " . expand('%:p:h') . "/." . expand('%:t') . ".view"
 augroup END
-"au BufWinLeave *.md mkview
-"au BufWinEnter *.md silent loadview
-" This one works
-"autocmd BufWinLeave *.md execute "mkview! " . expand('<afile>:p:h') . "/." . expand('<afile>:t') . ".view"
-" And this one not
-"autocmd BufWinEnter *.md execute "loadview! " . expand('<afile>:p:h') . "/." . expand('<afile>:t') . ".view"
 
 if has("cscope")
 
