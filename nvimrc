@@ -32,6 +32,12 @@ Plug 'godlygeek/tabular'
 Plug 'jiangmiao/auto-pairs'
 Plug 'tpope/vim-eunuch'
 Plug 'vim-ruby/vim-ruby'
+" snippets plugin
+Plug 'tomtom/tlib_vim'
+Plug 'MarcWeber/vim-addon-mw-utils'
+Plug 'garbas/vim-snipmate'
+" snippets templates
+Plug 'honza/vim-snippets'
 
 " Syntax plugins
 Plug 'kergoth/vim-bitbake'
@@ -86,10 +92,6 @@ Plug 'aklt/plantuml-syntax'
 " Plug "Valloric/YouCompleteMe"
 " Plug "MarcWeber/vim-addon-mw-utils"
 " Plug "tomtom/tlib_vim"
-"
-" " snippets
-" Plug "SirVer/ultisnips"
-" Plug "honza/vim-snippets"
 
 call plug#end()
 
