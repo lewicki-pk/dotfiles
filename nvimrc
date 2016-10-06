@@ -142,7 +142,7 @@ let g:deoplete#sources#clang#sort_algo = 'priority'
 " let g:deoplete#sources#clang#debug#log_file =
 " '~/.log/nvim/python/deoplete-clang.log'
 
-let g:python_host_prog = '/usr/bin/python3'
+let g:python_host_prog = '/usr/bin/python'
 
 " Section: vim-airline
 
