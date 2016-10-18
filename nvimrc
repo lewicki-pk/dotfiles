@@ -115,7 +115,7 @@ set completeopt-=preview
 " " libclang shared library path
 " let g:deoplete#sources#clang#libclang_path = '/opt/llvm/lib/libclang.dylib'
 " " or
-let g:deoplete#sources#clang#libclang_path = '/usr/lib/llvm-3.6/lib/libclang.so'
+let g:deoplete#sources#clang#libclang_path = '/usr/lib/llvm-3.8/lib/libclang.so'
 "
 " " clang builtin header path
 let g:deoplete#sources#clang#clang_header = '/usr/lib/clang'
