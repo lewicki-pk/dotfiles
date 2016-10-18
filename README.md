@@ -29,3 +29,15 @@ Everything needed to run neovim smoothly
     sudo apt install ruby
     sudo apt install ruby-dev
     sudo gem install neovim
+    sudo apt install clang
+    sudo apt install libclang-dev
+
+Other stuff that is required to run smoothly
+
+    sudo apt install cscope
+    sudo apt install exuberant-ctags
+
+## other packages
+
+    sudo apt install sshfs
+    sudo apt install meld
