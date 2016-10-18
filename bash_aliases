@@ -14,6 +14,12 @@ function touch-timestamped() {
 }
 
 function mkdir-timestamped() {
+    NAME='date +%Y-%m-%d_'
+    NAME=`$NAME$@`
+    mkdir $NAME
+}
+
+function mkdir-timestamped-precise() {
     NAME='date +%Y-%m-%d_%H-%M_'
     NAME=`$NAME$@`
     mkdir $NAME
