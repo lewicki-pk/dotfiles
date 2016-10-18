@@ -1,0 +1,6 @@
+#!/bin/bash
+if rm -f cscope.files cscope.in.out cscope.out cscope.po.out tags; then
+    echo "Generated tag files removed!"
+else
+    echo "Error $? occured"
+fi

@@ -3,6 +3,7 @@
 ## about
 
 My config files such as .vimrc, .bashrc, etc.
+This also contains some simple scripts in bin directory.
 
 To work with neovim it requires to create symbolic link ~/.config/nvim/init.vim pointing to ~/.nvimrc
 

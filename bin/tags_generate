@@ -1,0 +1,30 @@
+#!/bin/bash
+T="$(date +%s)"
+
+args="$@"
+
+find ./ -name '*.cpp' -o -name '*.c' -o -name '*.hpp' -o -name '*.h' > cscope.files ;
+
+if [ -n "$args" ] ; then
+    echo "Not empty:"
+    for each in $args ; do
+        if [ -e "$each" ] ; then
+            echo "Building with $each"
+            find "$each" -name '*.cpp' -o -name '*.c' -o -name '*.hpp' -o -name '*.h' >> cscope.files ;
+        else
+            echo "$each does not exist!"
+        fi
+    done
+else
+    echo "Building without additional directories.."
+fi
+
+# cscope -b -q -k ;
+cscope -b
+CSCOPE_DB=./cscope.out ; export CSCOPE_DB   
+echo "Generated cscope db with $? status!"
+ctags --language-force=C++ -R ./ ;
+echo "Generated ctags db with $? status!"
+
+T="$(($(date +%s)-T))"
+echo "It took ${T} seconds!"
