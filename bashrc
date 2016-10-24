@@ -127,3 +127,7 @@ export EDITOR="$VISUAL"
 export PATH=$PATH:$HOME/bin
 [[ $TERM == "screen" ]] && export -p TERM="screen-256color"
 export PKG_CONFIG_PATH=/usr/lib/pkgconfig:/lib/pkgconfig:/usr/local/lib/pkgconfig
+
+export PYENV_ROOT="$HOME/.pyenv"
+export PATH="$PYENV_ROOT/bin:$PATH"
+eval "$(pyenv init -)"
