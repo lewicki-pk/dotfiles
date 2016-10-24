@@ -360,6 +360,14 @@ augroup QuickNotes
     autocmd BufWinEnter *.md execute "silent! source " . expand('%:p:h') . "/." . expand('%:t') . ".view"
 augroup END
 
+" use simpler colors for diff mode
+highlight DiffAdd    cterm=bold ctermfg=10 ctermbg=17 gui=none guifg=bg guibg=Red
+highlight DiffDelete cterm=bold ctermfg=10 ctermbg=17 gui=none guifg=bg guibg=Red
+highlight DiffChange cterm=bold ctermfg=10 ctermbg=17 gui=none guifg=bg guibg=Red
+highlight DiffText   cterm=bold ctermfg=10 ctermbg=88 gui=none guifg=bg guibg=Red
+
+""""""""""""""""""""" CSCOPE """""""""""""""""""""
+
 if has("cscope")
 
     """"""""""""" Standard cscope/vim boilerplate
