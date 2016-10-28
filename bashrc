@@ -131,3 +131,7 @@ export PKG_CONFIG_PATH=/usr/lib/pkgconfig:/lib/pkgconfig:/usr/local/lib/pkgconfi
 export PYENV_ROOT="$HOME/.pyenv"
 export PATH="$PYENV_ROOT/bin:$PATH"
 eval "$(pyenv init -)"
+
+export LC_ALL=en_US.UTF-8
+export LANG=en_US.UTF-8
+export LANGUAGE=en_US.UTF-8
