@@ -25,8 +25,18 @@ function mkdir-timestamped-precise() {
     mkdir $NAME
 }
 
+# bitbake aliases and functions
+
 function parse_image_packages() {
     bitbake -g $1 && cat pn-depends.dot | grep -v -e '-native' | grep -v digraph | grep -v -e '-image' | awk '{print $1}' | sort | uniq
+}
+
+function bitbake.with.clean() {
+    bitbake "$@" -c clean && bitbake "$@"
+}
+
+function bitbake.with.cleanall() {
+    bitbake "$@" -c cleanall && bitbake "$@"
 }
 
 # git aliases
@@ -61,23 +71,17 @@ alias screens='screen -S'
 alias clear_cache="free -h && sync && echo 3 | sudo tee /proc/sys/vm/drop_caches && free -h"
 alias vi=vim
 alias vim=nvim
-tmux.session() {
+tmux.outside.session() {
     tmux new-session -d -s "$@" ; tmux att
+}
+tmux.inside.session() {
+    tmux new-session -d -s "$@" ; tmux switch-client -t "$@"
 }
 
 
 alias gmock_gen="~/repositories/googletest/googlemock/scripts/generator/gmock_gen.py "
 
 function stopwatch() {
-    #date +%H:%M:%S:%N
-    #while true; do echo -ne "`date +%H:%M:%S:%N`\r"; done;
-    #date1=`date +%s.%N`
-    #while true; do
-    #    curr_date=`date +%s.%N`
-    #    subtr=`echo "$curr_date - $date1" | bc`
-    #    echo -ne "$subtr\r";
-    #    sleep 0.03
-    #done;
     now=$(date +%s)sec
     while true; do
         printf "%s\r" $(TZ=UTC date --date now-$now +%H:%M:%S.%N)
@@ -102,4 +106,8 @@ function cd.up() {
             cd ..
         done
     fi
+}
+
+function filter.packages.with.versions () {
+    cat pn-depends.dot | grep -v -e '-native' | grep -v -e 'digraph' | grep -v -e '-image' | grep -v -e '->' | sed 's/.*label="\(.*\)\\n.*/\1/' | sort
 }
