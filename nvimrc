@@ -63,6 +63,7 @@ nnoremap <script> <silent> <unique> <Leader>tt :BuffersToTabs<CR>
 "  %    :  saves and restores the buffer list
 "  n... :  where to save the viminfo files
 set viminfo='10,\"100,:20,%,n~/.viminfo
+set nowrap
 
 function! ResCur()
   if line("'\"") <= line("$")
@@ -82,6 +83,9 @@ let g:AutoPairsMapCR = 0
 " Section: deoplete options
 "Use deoplete for completion
 let g:deoplete#enable_at_startup = 1
+let g:deoplete#enable_smart_case = 1
+let g:deoplete#enable_refresh_always = 1
+
 
 " For problems with autocompletion:
 "set completeopt-=preview
@@ -162,6 +166,9 @@ set mouse=""
 set listchars=tab:»\ ,eol:¶,trail:·,   " show invisible characters as in eclipse IDE
 
 " Enable / Disable the highlighting with ,he / ,hd
+highlight OverLength ctermbg=white
+match OverLength /\%120v.*/
+
 map <leader>hd :highlight clear OverLength <CR>
 map <leader>he :highlight OverLength ctermbg=white <CR>
 
