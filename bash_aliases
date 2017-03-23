@@ -3,7 +3,7 @@ alias :q=exit
 # work aliases
 alias NFS.export="sudo /usr/sbin/exportfs -va"
 
-alias run-qtcreator="/home/repo/bin/Qt/Tools/QtCreator/bin/qtcreator &"
+alias run-qtcreator="~/Qt/Tools/QtCreator/bin/qtcreator &"
 
 alias chdir_to_current='screen -X eval "chdir $PWD"'
 
@@ -42,6 +42,7 @@ function bitbake.with.cleanall() {
 # git aliases
 alias gcommit="git commit "
 alias gst="git status "
+alias gs="git status -sb"
 alias gadd="git add "
 alias gpull="git pull "
 alias gpush="git push "
@@ -111,3 +112,22 @@ function cd.up() {
 function filter.packages.with.versions () {
     cat pn-depends.dot | grep -v -e '-native' | grep -v -e 'digraph' | grep -v -e '-image' | grep -v -e '->' | sed 's/.*label="\(.*\)\\n.*/\1/' | sort
 }
+
+alias cmake.eclipse="cmake -G\"Eclipse CDT4 - Unix Makefiles\" -D CMAKE_BUILD_TYPE=Debug"
+
+alias clang-format="clang-format -style=file "
+
+alias reboot='echo "Do not reboot here you idiot!"'
+
+# Work aliases
+#alias ssh.to.toradex='ssh -oCiphers=aes128-ctr'
+#alias scp.to.toradex='scp -oCiphers=aes128-ctr'
+#alias bs.mount.build.server="sshfs -o allow_other buildserver:/home/username/ /home/username/"
+#alias bs.unmount.build.serwer="sudo fusermount -u /home/username"
+#alias vi.logs="vi -u ~/Documents/logs/nvimrc.logs"
+#alias elvi="vim -u ~/elfinrc"
+
+alias wlog="vi /home/piotr/wlog/week`date +%U`.md"
+alias run-vym='nohup vym ~/Documents/Workplan.vym &'
+alias run-remarkable='nohup remarkable &'
+alias run-eclipse='nohup /home/piotr/repo/eclipse/eclipse &'
