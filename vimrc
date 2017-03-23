@@ -35,27 +35,29 @@ nmap <F5> :! tags_generate<CR>
 nmap <F7> :NERDTreeToggle<CR> 
 nmap <F6> :NERDTree %:p:h<CR>
 nmap <F8> :TagbarToggle<CR> 
-nmap <F9> :!git diff \|less<CR>
+"nmap <F9> :!git diff \| less<CR>
 nmap <CR> o<Esc>
+
 
 nnoremap <silent> <Space> :silent noh<Bar>echo<CR>
 " user defined commands
-command DBGPrint ! cat % <Bar> grep \%\%\% <Bar> less
-command! -nargs=1 Filter %y z <Bar> tabnew <Bar> 0put=@z <Bar> %!grep -in "<args>"
-command! -nargs=1 FilterInv %y z <Bar> tabnew <Bar> 0put=@z <Bar> %!grep -ci "<args>"
-
-command! -nargs=1 FilterSens %y z <Bar> tabnew <Bar> 0put=@z <Bar> %!grep -n "<args>"
-command! -nargs=1 FilterSensInv %y z <Bar> tabnew <Bar> 0put=@z <Bar> %!grep -c "<args>"
-
-" ELFIN commands
-command GetFullFilename !readlink -f %
-command ToggleNumber set number !
-command ToggleCIndent set cindent !
-command BuffersToTabs tab sball
+"command DBGPrint ! cat % <Bar> grep \%\%\% <Bar> less
+"command! -nargs=1 Filter %y z <Bar> tabnew <Bar> 0put=@z <Bar> %!grep -in "<args>"
+"command! -nargs=1 FilterInv %y z <Bar> tabnew <Bar> 0put=@z <Bar> %!grep -ci "<args>"
+"
+"command! -nargs=1 FilterSens %y z <Bar> tabnew <Bar> 0put=@z <Bar> %!grep -n "<args>"
+"command! -nargs=1 FilterSensInv %y z <Bar> tabnew <Bar> 0put=@z <Bar> %!grep -c "<args>"
+"
+"" ELFIN commands
+"command GetFullFilename !readlink -f %
+"command ToggleNumber set number !
+"command ToggleCIndent set cindent !
+"command BuffersToTabs tab sball
 
 set backspace=2
 
 set textwidth=0
 set wrapmargin=0
 
-let g:tagbar_width = 55
+"let g:tagbar_width = 55
+set viminfo=""
