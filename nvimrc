@@ -138,8 +138,39 @@ augroup END
 
 " Section: Own commands
 command! GetFullFilename !readlink -f %
-"command! -nargs=1 TmuxSession !tmux.session "<args>"
 command! -nargs=1 Filter %y z <Bar> tabnew <Bar> 0put=@z <Bar> %!grep -in "<args>"
+
+set mouse=""
+
+" Section: Own mappings
+"nnoremap ' ' <Nop>
+let mapleader=","
+nnoremap <Leader>p :CtrlP ~/repositories/<CR>
+map <leader>n <plug>NERDTreeTabsToggle<CR>
+map <leader>m :NERDTree %:p:h<CR>
+map <leader>a :A<CR>
+nmap <leader>bb :TagbarToggle<CR>
+nnoremap <silent> <Space> :silent noh<CR>
+nmap <CR> o<Esc>
+map <leader>ll :set list! <CR>
+" move to previously used tab
+let g:lasttab = 1
+nmap <Leader>tl :exe "tabn ".g:lasttab<CR>
+au TabLeave * let g:lasttab = tabpagenr()
+
+command! RunMe terminal ./%:t:r
+command! RubyRun terminal ruby %
+command! Python3Run terminal python3 %
+command! Python2Run terminal python %
+command! MakeAll !make
+
+" Tell vim to remember certain things when we exit
+"  '10  :  marks will be remembered for up to 10 previously edited files
+"  "100 :  will save up to 100 lines for each register
+"  :20  :  up to 20 lines of command-line history will be remembered
+"  %    :  saves and restores the buffer list
+"  n... :  where to save the viminfo files
+set viminfo='10,\"100,:20,%,n~/.viminfo
 
 function! RangeTmux() range
   " Why is this not a built-in Vim script function?!

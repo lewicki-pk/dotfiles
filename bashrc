@@ -132,10 +132,15 @@ export PATH=$PATH:$HOME/bin
 [[ $TERM == "screen" ]] && export -p TERM="screen-256color"
 export PKG_CONFIG_PATH=/usr/lib/pkgconfig:/lib/pkgconfig:/usr/local/lib/pkgconfig
 
-export PYENV_ROOT="$HOME/.pyenv"
-export PATH="$PYENV_ROOT/bin:$PATH"
-eval "$(pyenv init -)"
+#export PYENV_ROOT="$HOME/.pyenv"
+#export PATH="$PYENV_ROOT/bin:$PATH"
+#eval "$(pyenv init -)"
 
 export LC_ALL=en_US.UTF-8
 export LANG=en_US.UTF-8
 export LANGUAGE=en_US.UTF-8
+#
+#if [ -z "$TMUX" ]
+#then
+#    ( tmux has-session -t main && tmux attach-session -t main ) || tmux new-session -t main
+#fi

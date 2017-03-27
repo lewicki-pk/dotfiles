@@ -131,3 +131,10 @@ alias wlog="vi /home/piotr/wlog/week`date +%U`.md"
 alias run-vym='nohup vym ~/Documents/Workplan.vym &'
 alias run-remarkable='nohup remarkable &'
 alias run-eclipse='nohup /home/piotr/repo/eclipse/eclipse &'
+
+alias qtcreator="/home/lewiatan/repo/Qt/Tools/QtCreator/bin/qtcreator.sh &"
+
+function merge_subtitles () {
+    # merge_subtitles title movie_extension subs_extension
+    mkvmerge -o "$1.$2" "$1.mp4" "$1.$3"
+}
