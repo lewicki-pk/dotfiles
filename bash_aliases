@@ -138,3 +138,7 @@ function merge_subtitles () {
     # merge_subtitles title movie_extension subs_extension
     mkvmerge -o "$1.$2" "$1.mp4" "$1.$3"
 }
+
+# Android
+export ANDROID_SDK_ROOT=~/Android/Sdk/
+alias android-run-emulator="~/repo/tools/emulator -avd Nexus_5X_API_24 -qemu -m 2047 -enable-kvm"
