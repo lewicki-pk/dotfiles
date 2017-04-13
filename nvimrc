@@ -184,6 +184,7 @@ function! RangeTmux() range
 endfunction
 
 command! -range TmuxSession <line1>,<line2>call RangeTmux()
+command! -range ClangFormat <line1>,<line2> !clang-format
 
 " Section: Own options
 set number

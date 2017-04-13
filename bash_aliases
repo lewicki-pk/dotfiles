@@ -7,6 +7,16 @@ alias run-qtcreator="~/Qt/Tools/QtCreator/bin/qtcreator &"
 
 alias chdir_to_current='screen -X eval "chdir $PWD"'
 
+function find.name() {
+    if [ $# == 2 ] ; then
+        find "$1" -name "$2"
+    elif [ $# == 1 ] ; then
+        find . -name "$1"
+    else
+        echo "Bledna liczba argumentow (poprawne 1 lub 2)"
+    fi
+}
+
 function touch-timestamped() {
     NAME='date +%Y-%m-%d_%H-%M_'
     NAME=`$NAME$@`
