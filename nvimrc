@@ -21,6 +21,7 @@ Plug 'airblade/vim-gitgutter'
 Plug 'dantler/vim-alternate'
 Plug 'henrik/vim-indexed-search'
 Plug 'jiangmiao/auto-pairs'
+Plug 'majutsushi/tagbar'
 " snippets plugin
 Plug 'tomtom/tlib_vim'
 Plug 'MarcWeber/vim-addon-mw-utils'
@@ -381,7 +382,6 @@ endif
 
 
 "Plug 'benekastah/neomake'
-"Plug 'majutsushi/tagbar'
 "Plug 'ctrlpvim/ctrlp.vim'
 "Plug 'szw/vim-tags'
 "Plug 'edsono/vim-matchit'
