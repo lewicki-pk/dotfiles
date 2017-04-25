@@ -97,8 +97,8 @@ let g:deoplete#sources#clang#libclang_path = '/usr/lib/llvm-3.8/lib/libclang.so'
 
 " clang builtin header path
 let g:deoplete#sources#clang#clang_header = '/usr/lib/clang/3.8.0/include'
-let g:python_host_prog = '/home/piotr/.pyenv/versions/neovim2/bin/python'
-let g:python3_host_prog = '/home/piotr/.pyenv/versions/neovim3/bin/python'
+let g:python_host_prog = '~/.pyenv/versions/neovim2/bin/python'
+let g:python3_host_prog = '~/.pyenv/versions/neovim3/bin/python'
 
 " Section: vim-airline
 

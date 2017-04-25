@@ -102,11 +102,11 @@ function stopwatch() {
 }
 
 # sshfs
-alias mount.pi.home="sshfs -o idmap=user pi@raspberryPi:/home/pi /home/lewiatan/pi/home/"
-alias mount.pi.openhab="sshfs -o idmap=user pi@raspberryPi:/opt/openhab /home/lewiatan/pi/openhab/"
-alias unmount.raspberrypi="fusermount -u /home/lewiatan/pi/home/ ; fusermount -u /home/lewiatan/pi/openhab/"
+alias mount.pi.home="sshfs -o idmap=user pi@raspberryPi:/home/pi ~/pi/home/"
+alias mount.pi.openhab="sshfs -o idmap=user pi@raspberryPi:/opt/openhab ~/pi/openhab/"
+alias unmount.raspberrypi="fusermount -u ~/pi/home/ ; fusermount -u ~/pi/openhab/"
 
-alias remove.pi.ssh='ssh-keygen -f "/home/lewiatan/.ssh/known_hosts" -R raspberrypi'
+alias remove.pi.ssh='ssh-keygen -f "~/.ssh/known_hosts" -R raspberrypi'
 
 alias list.apt.packages="dpkg --get-selections | grep -v deinstall"
 
@@ -138,12 +138,12 @@ alias reboot='echo "Do not reboot here you idiot!"'
 #alias vi.logs="vi -u ~/Documents/logs/nvimrc.logs"
 #alias elvi="vim -u ~/elfinrc"
 
-alias wlog="vi /home/piotr/wlog/week`date +%U`.md"
+alias wlog="vi ~/wlog/week`date +%U`.md"
 alias run-vym='nohup vym ~/Documents/Workplan.vym &'
 alias run-remarkable='nohup remarkable &'
-alias run-eclipse='nohup /home/piotr/repo/eclipse/eclipse &'
+alias run-eclipse='nohup ~/repo/eclipse/eclipse &'
 
-alias qtcreator="/home/lewiatan/repo/Qt/Tools/QtCreator/bin/qtcreator.sh &"
+alias qtcreator="~/repo/Qt/Tools/QtCreator/bin/qtcreator.sh &"
 
 function merge_subtitles () {
     # merge_subtitles title movie_extension subs_extension
