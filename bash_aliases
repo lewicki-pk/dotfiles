@@ -58,6 +58,7 @@ alias gpull="git pull "
 alias gpush="git push "
 alias gd="git diff "
 alias gd.c="git diff --cached "
+alias gcl="git clean -xdf"
 function g.vim.diff () {
     local VARIABLE="$(git diff --name-only)"
     if [ -n "$VARIABLE" ] ; then
