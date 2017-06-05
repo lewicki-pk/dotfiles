@@ -152,4 +152,9 @@ function merge_subtitles () {
 
 # Android
 export ANDROID_SDK_ROOT=~/Android/Sdk/
-alias android-run-emulator="~/repo/tools/emulator -avd Nexus_5X_API_24 -qemu -m 2047 -enable-kvm"
+alias android-run-emulator="nohup ~/repo/tools/emulator -avd Nexus_5X_API_24 -qemu -m 2047 -enable-kvm > /tmp/nohup.out.android-run-emulator &"
+alias android-run-studio="nohup ~/repo/android-studio/bin/studio.sh > /tmp/nohup.out.android-run-studio &"
+function android-run-all() {
+    android-run-studio
+    android-run-emulator
+}
