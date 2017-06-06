@@ -4,7 +4,7 @@
 #1. Diff these rc files with those in your $HOME directory and if they differ - create a backup of your files
 #2. Create symbolic links in your $HOME directory pointing to these files
 
-FILES="bash_aliases bashrc screenrc vimrc vrapperrc tmux.conf nvimrc clang-format"
+FILES="bash_aliases bashrc screenrc vimrc vrapperrc tmux.conf nvimrc clang-format ideavimrc"
 
 echo "Your home directory is: $HOME"
 for f in $FILES; do
