@@ -3,8 +3,6 @@ alias :q=exit
 # work aliases
 alias NFS.export="sudo /usr/sbin/exportfs -va"
 
-alias run-qtcreator="~/Qt/Tools/QtCreator/bin/qtcreator &"
-
 alias chdir_to_current='screen -X eval "chdir $PWD"'
 
 function find.name() {
@@ -59,6 +57,21 @@ alias gpush="git push "
 alias gd="git diff "
 alias gd.c="git diff --cached "
 alias gcl="git clean -xdf"
+alias glog="git log --name-status"
+function update.all.git.directories() {
+  for each in $( ls -d */ ) ;
+  do
+    echo '==============='
+    echo "$each"
+    cd $each
+    git clean -xdf
+    git checkout -- *
+    git checkout master
+    git pull
+    cd -
+  done
+}
+
 function g.vim.diff () {
     local VARIABLE="$(git diff --name-only)"
     if [ -n "$VARIABLE" ] ; then
@@ -83,6 +96,7 @@ alias screens='screen -S'
 alias clear_cache="free -h && sync && echo 3 | sudo tee /proc/sys/vm/drop_caches && free -h"
 alias vi=vim
 alias vim=nvim
+alias vip="vi -p "
 tmux.outside.session() {
     tmux new-session -d -s "$@" ; tmux att
 }
@@ -129,6 +143,8 @@ alias cmake.eclipse="cmake -G\"Eclipse CDT4 - Unix Makefiles\" -D CMAKE_BUILD_TY
 alias clang-format="clang-format -style=file "
 
 alias reboot='echo "Do not reboot here you idiot!"'
+alias clear="/usr/bin/clear ; tmux clear-history"
+alias xclip="xclip -selection clipboard"
 
 # Work aliases
 #alias ssh.to.toradex='ssh -oCiphers=aes128-ctr'
@@ -143,8 +159,6 @@ alias run-vym='nohup vym ~/Documents/Workplan.vym &'
 alias run-remarkable='nohup remarkable &'
 alias run-eclipse='nohup ~/repo/eclipse/eclipse &'
 
-alias qtcreator="~/repo/Qt/Tools/QtCreator/bin/qtcreator.sh &"
-
 function merge_subtitles () {
     # merge_subtitles title movie_extension subs_extension
     mkvmerge -o "$1.$2" "$1.mp4" "$1.$3"
@@ -158,3 +172,4 @@ function android-run-all() {
     android-run-studio
     android-run-emulator
 }
+

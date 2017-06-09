@@ -39,7 +39,7 @@ nmap <F8> :TagbarToggle<CR>
 nmap <CR> o<Esc>
 
 
-nnoremap <silent> <Space> :silent noh<Bar>echo<CR>
+nnoremap <silent> <Space> :noh<Bar>echo<CR>
 " user defined commands
 "command DBGPrint ! cat % <Bar> grep \%\%\% <Bar> less
 "command! -nargs=1 Filter %y z <Bar> tabnew <Bar> 0put=@z <Bar> %!grep -in "<args>"

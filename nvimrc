@@ -31,6 +31,8 @@ Plug 'honza/vim-snippets'
 " syntax plugins
 Plug 'peterhoeg/vim-qml'
 Plug 'kergoth/vim-bitbake'
+" vim + tmux navigation
+" Plug 'christoomey/vim-tmux-navigator'
 call plug#end()
 
 " Section: use simpler colors for diff mode
@@ -97,8 +99,8 @@ let g:deoplete#sources#clang#libclang_path = '/usr/lib/llvm-3.8/lib/libclang.so'
 
 " clang builtin header path
 let g:deoplete#sources#clang#clang_header = '/usr/lib/clang/3.8.0/include'
-let g:python_host_prog = '~/.pyenv/versions/neovim2/bin/python'
-let g:python3_host_prog = '~/.pyenv/versions/neovim3/bin/python'
+let g:python_host_prog = '/home/piotr/.pyenv/versions/neovim2/bin/python'
+let g:python3_host_prog = '/home/piotr/.pyenv/versions/neovim3/bin/python'
 
 " Section: vim-airline
 
@@ -197,6 +199,8 @@ set showmatch
 set hidden
 set mouse=""
 set listchars=tab:»\ ,eol:¶,trail:·,   " show invisible characters as in eclipse IDE
+
+autocmd BufNewFile,BufRead *.pro   set syntax=qmake
 
 " Enable / Disable the highlighting with ,he / ,hd
 highlight OverLength ctermbg=white
