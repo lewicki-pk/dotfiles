@@ -58,6 +58,16 @@ alias gd="git diff "
 alias gd.c="git diff --cached "
 alias gcl="git clean -xdf"
 alias glog="git log --name-status"
+function glog.ahead ()
+{
+    variable=$(git status -bs | head -n 1 | cut -d ' ' -f3- | sed 's/[^0-9]//g')
+    if [ -n "$variable"  ] ; then
+        glog "-$variable"
+    else
+        glog -0
+    fi
+}
+
 function update.all.git.directories() {
   for each in $( ls -d */ ) ;
   do
