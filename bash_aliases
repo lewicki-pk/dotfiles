@@ -1,9 +1,9 @@
 alias :q=exit
 
 # work aliases
-alias NFS.export="sudo /usr/sbin/exportfs -va"
+#alias NFS.export="sudo /usr/sbin/exportfs -va"
 
-alias chdir_to_current='screen -X eval "chdir $PWD"'
+#alias chdir.to.current='screen -X eval "chdir $PWD"'
 
 function find.name() {
     if [ $# == 2 ] ; then
@@ -15,19 +15,19 @@ function find.name() {
     fi
 }
 
-function touch-timestamped() {
+function touch.timestamped() {
     NAME='date +%Y-%m-%d_%H-%M_'
     NAME=`$NAME$@`
     touch $NAME
 }
 
-function mkdir-timestamped() {
+function mkdir.timestamped() {
     NAME='date +%Y-%m-%d_'
     NAME=`$NAME$@`
     mkdir $NAME
 }
 
-function mkdir-timestamped-precise() {
+function mkdir.timestamped.precise() {
     NAME='date +%Y-%m-%d_%H-%M_'
     NAME=`$NAME$@`
     mkdir $NAME
@@ -35,7 +35,7 @@ function mkdir-timestamped-precise() {
 
 # bitbake aliases and functions
 
-function parse_image_packages() {
+function parse.image.packages() {
     bitbake -g $1 && cat pn-depends.dot | grep -v -e '-native' | grep -v digraph | grep -v -e '-image' | awk '{print $1}' | sort | uniq
 }
 
@@ -103,7 +103,7 @@ alias list.all.users="cut -d: -f1 /etc/passwd"
 alias log.pi='ssh root@10.0.0.15'
 alias screens='screen -S'
 
-alias clear_cache="free -h && sync && echo 3 | sudo tee /proc/sys/vm/drop_caches && free -h"
+alias clear.cache="free -h && sync && echo 3 | sudo tee /proc/sys/vm/drop_caches && free -h"
 alias vi=vim
 alias vim=nvim
 alias vip="vi -p "
@@ -117,7 +117,7 @@ tmux.inside.session() {
 
 alias gmock_gen="~/repositories/googletest/googlemock/scripts/generator/gmock_gen.py "
 
-function stopwatch() {
+function sw() {
     now=$(date +%s)sec
     while true; do
         printf "%s\r" $(TZ=UTC date --date now-$now +%H:%M:%S.%N)
@@ -165,20 +165,20 @@ alias xclip="xclip -selection clipboard"
 #alias elvi="vim -u ~/elfinrc"
 
 alias wlog="vi ~/wlog/week`date +%U`.md"
-alias run-vym='nohup vym ~/Documents/Workplan.vym &'
-alias run-remarkable='nohup remarkable &'
-alias run-eclipse='nohup ~/repo/eclipse/eclipse &'
+alias run.vym='nohup vym ~/Documents/Workplan.vym &'
+alias run.remarkable='nohup remarkable &'
+alias run.eclipse='nohup ~/repo/eclipse/eclipse &'
 
-function merge_subtitles () {
+function merge.subtitles () {
     # merge_subtitles title movie_extension subs_extension
     mkvmerge -o "$1.$2" "$1.mp4" "$1.$3"
 }
 
 # Android
 export ANDROID_SDK_ROOT=~/Android/Sdk/
-alias android-run-emulator="nohup ~/repo/tools/emulator -avd Nexus_5X_API_24 -qemu -m 2047 -enable-kvm > /tmp/nohup.out.android-run-emulator &"
-alias android-run-studio="nohup ~/repo/android-studio/bin/studio.sh > /tmp/nohup.out.android-run-studio &"
-function android-run-all() {
+alias android.run.emulator="nohup ~/repo/tools/emulator -avd Nexus_5X_API_24 -qemu -m 2047 -enable-kvm > /tmp/nohup.out.android-run-emulator &"
+alias android.run.studio="nohup ~/repo/android-studio/bin/studio.sh > /tmp/nohup.out.android-run-studio &"
+function android.run.all() {
     android-run-studio
     android-run-emulator
 }
