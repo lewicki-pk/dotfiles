@@ -15,6 +15,16 @@ function find.name() {
     fi
 }
 
+function ifind.name() {
+    if [ $# == 2 ] ; then
+        find "$1" -iname "$2"
+    elif [ $# == 1 ] ; then
+        find . -iname "$1"
+    else
+        echo "Bledna liczba argumentow (poprawne 1 lub 2)"
+    fi
+}
+
 function touch.timestamped() {
     NAME='date +%Y-%m-%d_%H-%M_'
     NAME=`$NAME$@`
@@ -58,6 +68,8 @@ alias gd="git diff "
 alias gd.c="git diff --cached "
 alias gcl="git clean -xdf"
 alias glog="git log --name-status"
+alias glog.pretty="git log --oneline --graph --color --all --decorate"
+alias glog.pretty.with.names="git log --name-status --oneline --graph --color --all --decorate"
 function glog.ahead ()
 {
     variable=$(git status -bs | head -n 1 | cut -d ' ' -f3- | sed 's/[^0-9]//g')
@@ -82,7 +94,7 @@ function update.all.git.directories() {
   done
 }
 
-function g.vim.diff () {
+function g.vim () {
     local VARIABLE="$(git diff --name-only)"
     if [ -n "$VARIABLE" ] ; then
         git diff --name-only | xargs nvim -p
@@ -90,10 +102,18 @@ function g.vim.diff () {
         echo "Nothing to open"
     fi
 }
+function g.vim.diff () {
+    local VARIABLE="$(git diff --name-only)"
+    if [ -n "$VARIABLE" ] ; then
+        git diff --name-only | xargs nvim -p -c "tabdo Gdiff"
+    else
+        echo "Nothing to open"
+    fi
+}
 function g.vim.diff.cached () {
     local VARIABLE="$(git diff --cached --name-only)"
     if [ -n "$VARIABLE" ] ; then
-        git diff --cached --name-only | xargs nvim -p
+        git diff --cached --name-only | xargs nvim -p -c "tabdo Gdiff"
     else
         echo "Nothing to open"
     fi
@@ -134,6 +154,10 @@ alias remove.pi.ssh='ssh-keygen -f "~/.ssh/known_hosts" -R raspberrypi'
 
 alias list.apt.packages="dpkg --get-selections | grep -v deinstall"
 
+function cd.tmp() {
+    cd `mktemp -d`
+}
+
 function cd.up() {
     if [[ "$@" == "" ]] ; then
         cd ..
@@ -143,6 +167,12 @@ function cd.up() {
         done
     fi
 }
+
+function mkdir.and.cd() {
+    mkdir -p -- "$1" &&
+        cd -P -- "$1"
+}
+alias cd.new.dir="mkdir.and.cd"
 
 function filter.packages.with.versions () {
     cat pn-depends.dot | grep -v -e '-native' | grep -v -e 'digraph' | grep -v -e '-image' | grep -v -e '->' | sed 's/.*label="\(.*\)\\n.*/\1/' | sort
