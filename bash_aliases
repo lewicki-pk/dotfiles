@@ -25,7 +25,11 @@ function ifind.name() {
     fi
 }
 
-function touch.timestamped() {
+function meld.excercise() {
+    meld $1-{E*,S*}
+}
+
+function touch-timestamped() {
     NAME='date +%Y-%m-%d_%H-%M_'
     NAME=`$NAME$@`
     touch $NAME
