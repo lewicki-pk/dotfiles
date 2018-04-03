@@ -7,9 +7,9 @@ alias :q=exit
 
 function find.name() {
     if [ $# == 2 ] ; then
-        find "$1" -name "$2"
+        find "$1" -name "*$2*"
     elif [ $# == 1 ] ; then
-        find . -name "$1"
+        find . -name "*$1*"
     else
         echo "Bledna liczba argumentow (poprawne 1 lub 2)"
     fi
@@ -17,9 +17,9 @@ function find.name() {
 
 function ifind.name() {
     if [ $# == 2 ] ; then
-        find "$1" -iname "$2"
+        find "$1" -iname "*$2*"
     elif [ $# == 1 ] ; then
-        find . -iname "$1"
+        find . -iname "*$1*"
     else
         echo "Bledna liczba argumentow (poprawne 1 lub 2)"
     fi
@@ -217,3 +217,4 @@ function android.run.all() {
     android-run-emulator
 }
 
+alias edytuj.skrypt="if [ -e \"./skrypt.sh\" ] ; then { echo Skrypt juz istnieje ; false ; } else { echo \"Tworze dla ciebie skrypt.sh\" ; touch skrypt.sh ; chmod +x skrypt.sh ; vi skrypt.sh ; } fi"
