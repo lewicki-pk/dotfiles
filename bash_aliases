@@ -131,13 +131,15 @@ alias clear.cache="free -h && sync && echo 3 | sudo tee /proc/sys/vm/drop_caches
 alias vi=vim
 alias vim=nvim
 alias vip="vi -p "
-tmux.outside.session() {
-    tmux new-session -d -s "$@" ; tmux att
-}
-tmux.inside.session() {
-    tmux new-session -d -s "$@" ; tmux switch-client -t "$@"
-}
 
+tmux.session() {
+    if [ -z "$TMUX" ]
+    then
+        tmux new-session -d -s "$@" ; tmux att
+    else
+        tmux new-session -d -s "$@" ; tmux switch-client -t "$@"
+    fi
+}
 
 alias gmock_gen="~/repositories/googletest/googlemock/scripts/generator/gmock_gen.py "
 
@@ -218,3 +220,17 @@ function android.run.all() {
 }
 
 alias edytuj.skrypt="if [ -e \"./skrypt.sh\" ] ; then { echo Skrypt juz istnieje ; false ; } else { echo \"Tworze dla ciebie skrypt.sh\" ; touch skrypt.sh ; chmod +x skrypt.sh ; vi skrypt.sh ; } fi"
+
+function stop.barrier.client () {
+    killall -9 barrierc
+}
+
+function start.barrier.client () {
+    #/usr/local/bin/barrierc -f --no-tray --debug INFO --name lewiatan-pc --enable-crypto [10.49.60.189]:24800
+    stop.barrier.client
+    nohup /usr/local/bin/barrierc -f --no-tray --debug INFO --name lewiatan-pc --enable-crypto "[$@]:24800" > /tmp/nohup.barrier&
+}
+
+alias start.proxy.connection="ssh -D 6666 -f -C -q -N my-private-network -p 443"
+
+alias go.yocto="cd ~/repo/meta-livelink/"

@@ -33,6 +33,13 @@ Plug 'peterhoeg/vim-qml'
 Plug 'kergoth/vim-bitbake'
 " vim + tmux navigation
 " Plug 'christoomey/vim-tmux-navigator'
+"
+" Erlang
+Plug 'vim-erlang/vim-erlang-runtime'
+Plug 'vim-erlang/vim-erlang-compiler'
+Plug 'vim-erlang/vim-erlang-omnicomplete'
+Plug 'vim-erlang/vim-erlang-tags'
+
 call plug#end()
 
 " Section: use simpler colors for diff mode
@@ -95,12 +102,10 @@ let g:deoplete#enable_refresh_always = 1
 
 " Section: deoplete-clang options
 " libclang shared library path
-let g:deoplete#sources#clang#libclang_path = '/usr/lib/llvm-3.8/lib/libclang.so'
+let g:deoplete#sources#clang#libclang_path = '/usr/lib/llvm-6.0/lib/libclang.so.1'
 
 " clang builtin header path
-let g:deoplete#sources#clang#clang_header = '/usr/lib/clang/3.8.0/include'
-let g:python_host_prog = '/home/piotr/.pyenv/versions/neovim2/bin/python'
-let g:python3_host_prog = '/home/piotr/.pyenv/versions/neovim3/bin/python'
+let g:deoplete#sources#clang#clang_header = '/usr/lib/clang/6.0.0/include'
 
 " Section: vim-airline
 
